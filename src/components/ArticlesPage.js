@@ -10,13 +10,13 @@ import qs from "stringquery";
 class ArticlesPage extends Component {
   componentDidMount() {
     const obj = qs(this.props.location.search); 
-    this.props.fetchArticles(obj.page, 10);
+    this.props.fetchArticles(obj.page);
   }
 
   componentDidUpdate (prevProps) {
     if (prevProps.location.key !== this.props.location.key) {
       const obj = qs(this.props.location.search);  
-      this.props.fetchArticles(obj.page, 10);
+      this.props.fetchArticles(obj.page);
     }
   }
 
