@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ArticlesPage from './components/ArticlesPage';
+import ArticlesForm from './components/ArticlesForm';
+import { Route } from 'react-router';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
+      <div className="container">
+        <div className="page-header">
+          <a  target="_blank" rel="noopener noreferrer" href="https://pixelplex.io/">
+            <img src="https://image.ibb.co/k7cmVT/logo_w.png" alt=""/>
           </a>
-        </header>
+        </div>
+          
+          <Route exact path="/articles" component={ ArticlesPage } />
+          <Route path="/articles/create" component={ ArticlesForm } />
+          <Route path="/articles/:id/edit" component={ ArticlesForm } />
+        
       </div>
     );
   }
