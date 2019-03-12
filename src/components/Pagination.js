@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Pagination() {
 
-  const articlesCount = 12;
+  const articlesCount = 12; //Cant get it from store now
   const pageCount = Math.ceil(articlesCount / 10);
   var buttons = [];
 
